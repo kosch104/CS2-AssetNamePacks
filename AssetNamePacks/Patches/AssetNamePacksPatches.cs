@@ -1,7 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
+using AssetNamePacks.Localization;
 using HarmonyLib;
 using Colossal.Localization;
 using Colossal.IO.AssetDatabase;
+using UnityEngine;
 
 namespace AssetNamePacks.Patches
 {
@@ -9,9 +13,16 @@ namespace AssetNamePacks.Patches
     internal class LocalizationManager_AddLocale
     {
         static readonly LocalizationJS localizationJS = new();
+        static public readonly string AssetPackPath =
+            Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "packs");
         static void Prefix(LocaleAsset asset)
         {
-            Localization.AddCustomLocal(asset);
+            Localization.Localization.AddCustomLocal(asset);
+
+            if (localizationJS == null)
+                return;
+            if (localizationJS.Localization == null)
+                return;
 
             foreach(string key in asset.data.entries.Keys)
             {
