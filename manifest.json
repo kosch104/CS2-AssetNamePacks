@@ -1,7 +1,7 @@
 {
-  "name": "Highway_Name_Remover",
-  "version_number": "1.1.0",
-  "website_url": "https://github.com/kosch104/CS2-HighwayNameRemover",
-  "description": "Removes Display Names for all Streets and Highways",
+  "name": "Asset_Name_Packs",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/kosch104/CS2-AssetNamePacks",
+  "description": "Allows you to use custom name packs for many asset types",
   "dependencies": [ "BepInEx-BepInExPack-5.4.2100" ]
 }
