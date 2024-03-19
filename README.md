@@ -25,7 +25,7 @@ This mod can easily be installed using r2modman or Thunderstore Mod Manager. If 
 - This mod is not compatible with other mods replacing the localization files (I currently don't know any mods that do)
 
 ## Further Notes
-- [Changelog](https://github.com/kosch104/CS2-AssetNamePacks/blob/main/CHANGELOG.md
+- [Changelog](https://github.com/kosch104/CS2-AssetNamePacks/blob/main/CHANGELOG.md)
 
 
 
