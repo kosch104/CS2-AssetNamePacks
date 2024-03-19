@@ -21,6 +21,29 @@ This mod can easily be installed using r2modman or Thunderstore Mod Manager. If 
 2. Download the file
 3. Extract the `AssetNamePacks.zip` file into the `BepInEx\plugins` folder
 
+## Supported Assets
+Technically all assets that support numbering are supported already. I've yet to compile a full list. You can take a look at the localization files of Cities Skylines 2 to see more examples.
+
+### Examples
+#### Road Names
+- `Assets.STREET_NAME`
+- `Assets.HIGHWAY_NAME`
+- `Assets.ALLEY_NAME`
+- `Assets.DAM_NAME`
+- `Assets.BRIGE_NAME`
+
+#### Citizen Names
+- `Assets.CITIZEN_NAME_MALE`
+- `Assets.CITIZEN_SURNAME_MALE`
+- `Assets.CITIZEN_NAME_FEMALE`
+- `Assets.CITIZEN_SURNAME_FEMALE`
+- `Assets.ANIMAL_NAME_DOG`
+
+#### Misc
+- `Assets.CITY_NAME`
+- `Assets.DISTRICT_NAME`
+
+
 ## Compatibility
 - This mod is not compatible with other mods replacing the localization files (I currently don't know any mods that do)
 
