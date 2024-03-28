@@ -53,7 +53,7 @@ namespace AssetNamePacks.Localization
 			var packsDirectory = new DirectoryInfo(Patches.LocalizationManager_AddLocale.AssetPackPath);
 			if (!packsDirectory.Exists)
 			{
-				Debug.LogWarning("[Asset Name Packs] Packs directory not found");
+				Debug.LogWarning("[Asset Name Packs] Packs directory not found: " + packsDirectory.FullName);
 				return;
 			}
 			Dictionary<string, string> packs = new();
