@@ -48,12 +48,30 @@ namespace AssetNamePacks.Localization
             }
 		}
 
+		private static void CreateDefaultFile()
+		{
+			var packsDirectory = new DirectoryInfo(Patches.LocalizationManager_AddLocale.AssetPackPath);
+			var defaultPackDirectory = new DirectoryInfo(Path.Combine(packsDirectory.FullName, "Default"));
+			if (!defaultPackDirectory.Exists)
+			{
+				Plugin.Logger.LogInfo("[Asset Name Packs] Creating default pack directory at " + defaultPackDirectory.FullName);
+				defaultPackDirectory.Create();
+			}
+			using (StreamWriter sw = File.CreateText(Path.Combine(defaultPackDirectory.FullName, "STREET_NAME.en-US.txt.example")))
+			{
+				sw.WriteLine("Main Street");
+				sw.WriteLine("Home Street");
+				sw.WriteLine("School Street");
+			}
+		}
+
 		private static void LoadLocalization()
 		{
 			var packsDirectory = new DirectoryInfo(Patches.LocalizationManager_AddLocale.AssetPackPath);
 			if (!packsDirectory.Exists)
 			{
-				Debug.LogWarning("[Asset Name Packs] Packs directory not found: " + packsDirectory.FullName);
+				Plugin.Logger.LogWarning("[Asset Name Packs] Packs directory not found");
+				CreateDefaultFile();
 				return;
 			}
 			Dictionary<string, string> packs = new();
@@ -61,7 +79,7 @@ namespace AssetNamePacks.Localization
 			{
 				packs.Add(pack.Name, pack.FullName);
 			}
-			Debug.Log("[Asset Name Packs] Found " + packs.Count + " packs");
+			Plugin.Logger.LogInfo("[Asset Name Packs] Found " + packs.Count + " packs");
 			// ContainsKey throws error?
 			if (packs.ContainsKey("Default"))
 			{
@@ -69,7 +87,7 @@ namespace AssetNamePacks.Localization
 			}
 			else
 			{
-				Debug.LogWarning("[Asset Name Packs] Default pack not found");
+				Plugin.Logger.LogWarning("[Asset Name Packs] Default pack not found");
 				localization = new();
 			}
 		}
