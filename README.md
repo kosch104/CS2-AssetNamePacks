@@ -6,8 +6,11 @@ Please note that this is a really early development version and I might add more
 
 This mod is intended to be used with downloadable files of street name etc. that are widely available on the internet. Feel free to just write your own file in a theme of your choice and use it!
 
+
+Please note, when using name packs with less entries than the previous localization, you might lose some default names. For example: When you have a pack with 100 street names and then use a pack with 10 street names, you will not see the other 90 street names anymore, even if you switch back to the 100 street name pack. This issue only occurs on existing assets and only on assets that have not been renamed ingame.
+
 ## Install Name Packs
-This mod will create the directory required to use name packs on first launch. You can go ahead and create the directory yourself if you like. The directory location is different when manually installing, using thunderstore mod manager or r2modman.
+This mod will create the directory required to use name packs on first launch. You can go ahead and create the directory yourself if you like. The directory location is different when manually installing, using thunderstore mod manager or r2modman. To be used, this file needs to be renamed to `STREET_NAME.en-US.txt`, you have to remove the `.example` at the end. Please note this file is not a full pack, only an example file.
 
 To use a name pack, create a `packs/Default`-folder of this mod and add asset name files there. The files need to be named after the asset they are replacing. Please look at the example file in the Default folder. The file has to be a .txt file and include that language that is going to be used ingame.
 
